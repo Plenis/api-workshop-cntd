@@ -22,6 +22,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+let brandList = ["Honda", "Toyota", "Nissan"]
+
+app.post('/api/brand_add', function(req, res){
+    brandList.push(req.body.brandName);
+    res.json({
+        status: "success"
+    })
+});
+
+app.get('/api/brand_list', function(req, res){
+    res.json(brandList)
+});
+
 const PORT = process.env.PORT || 3010;
 
 app.listen(PORT, function () {

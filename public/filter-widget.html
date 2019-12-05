@@ -6,11 +6,52 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+
+	<script class="makesTemplate"  type="text/template" >
+		<select>
+			{{#each brands}}
+			<option value="{{this}}">{{this}}</option>
+			{{/each}}
+		</select>
+	</script>
+	<script class="allCars" type="text/template">
+	<table>
+		{{#each carshow}}
+		<tr>
+				<td > {{make}} </td>
+				<td > {{model}} </td>
+				<td > {{color}} </td>
+				<td > {{price}} </td>	
+				<td > {{reg_number}} </td>
+			</tr>
+			{{/each}}
+		</table>
+	</script>
 
 </head>
 <body>
 	<div class="container">
 		<h1>Filter widget</h1>
+
+	<div class="selectColor">
+		<select class="colors" >
+
+		</select>
+		
+	</div>
+	<div class="selectBrand">
+			<select class="brands" >
+
+			</select>
+	</div>
+	</div>
+	<button class="showButton" on type="button">Show</button>
+	<div class="display">
+
 	</div>
 </body>
+<script src="cars.js"></script>
 </html>
